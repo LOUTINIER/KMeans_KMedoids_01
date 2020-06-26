@@ -7,24 +7,26 @@ using std::cout;
 
 int main()
 {
-	const constexpr char* file = R"(C:\Users\13614\OneDrive\4\数据挖掘\实验\EX3\data.txt)";
-	const unsigned k[3] = { 5,10,20 };
+	const constexpr char *file = R"(data.txt)";
+	const unsigned k[3] = {5, 10, 20};
 	clock_t start, end;
 
-	for (auto& i : k) {
-		printf("簇个数为%u时：\n", i);
+	for (auto &i : k)
+	{
+		printf("锟截革拷锟斤拷为%u时锟斤拷\n", i);
 		start = clock();
 		KMeans kmeans = KMeans(file, i);
 		end = clock();
-		printf("Kmeans算法花费:%lfs\n", 1.0 * (end - start) / CLOCKS_PER_SEC);
+		printf("Kmeans锟姐法锟斤拷锟斤拷:%lfs\n", 1.0 * (end - start) / CLOCKS_PER_SEC);
 		kmeans.Print();
 	}
-	for (auto& i : k) {
-		printf("簇个数为%u时：\n", i);
+	for (auto &i : k)
+	{
+		printf("锟截革拷锟斤拷为%u时锟斤拷\n", i);
 		start = clock();
 		KMedoids kmedoids = KMedoids(file, i);
 		end = clock();
-		printf("Kmedoids算法花费:%lfs\n", 1.0 * (end - start) / CLOCKS_PER_SEC);
+		printf("Kmedoids锟姐法锟斤拷锟斤拷:%lfs\n", 1.0 * (end - start) / CLOCKS_PER_SEC);
 		kmedoids.Print();
 	}
 	return 0;
