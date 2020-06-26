@@ -100,6 +100,12 @@ void KMedoids::Divide()
 				change = true;
 			}
 		}
+		if (!change) {
+			break;
+		}
+		else {
+			++iterators_cnt;
+		}
 		// »®·Ö
 		for (size_t i = 0; i < cluster_cnt; ++i) {
 			cluster[i].clear();
@@ -120,12 +126,6 @@ void KMedoids::Divide()
 				cluster[best_clus].push_back(i);
 				//divide_table[i] = best_clus;
 			}
-		}
-		if (!change) { 
-			break; 
-		}
-		else {
-			++iterators_cnt;
 		}
 	}
 }
@@ -151,12 +151,12 @@ void KMedoids::Print() const
 {
 	printf("Iterator: %uTimes\n\n", iterators_cnt);
 	for (size_t i = 0; i < cluster_cnt; ++i) {
-		printf("Cluster%u:\n", i);
+		printf("Cluster%u:", i);
 		// sort not neccessary
 		sort(cluster[i].begin(), cluster[i].end());
 		for (auto& val : cluster[i]) {
 			printf("%u ", val);
 		}
-		printf("\n\n");
+		printf("\n");
 	}
 }

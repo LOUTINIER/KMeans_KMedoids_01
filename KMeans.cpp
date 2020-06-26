@@ -161,14 +161,14 @@ void KMeans::Devide()
 
 void KMeans::Print()
 {
-	printf("Iterator: %uTimes\n\n", iterator_cnt);
+	printf("Iterator: %uTimes\n", iterator_cnt);
 	for (size_t i = 0; i < cluster_cnt; ++i) {
 		// sort not neccessary
 		sort(cluster[i]->clusters.begin(), cluster[i]->clusters.end());
-		printf("Cluster%u:\n", i);
+		printf("Cluster%u:", i);
 		for (auto &j : cluster[i]->clusters) {
 			printf("%u ",j);
 		}
-		printf("\n\n");
+		printf("\n");
 	}
 }

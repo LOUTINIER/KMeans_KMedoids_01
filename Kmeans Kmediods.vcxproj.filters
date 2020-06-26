@@ -39,4 +39,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="readme.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
